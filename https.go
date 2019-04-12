@@ -203,6 +203,9 @@ func (proxy *ProxyHttpServer) handleHttps(w http.ResponseWriter, r *http.Request
 					req.URL, err = url.Parse("https://" + r.Host + req.URL.String())
 				}
 
+				// Take the original value before filtering the request
+				closeConn := req.Close
+
 				// Bug fix which goproxy fails to provide request
 				// information URL in the context when does HTTPS MITM
 				ctx.Req = req
@@ -262,7 +265,7 @@ func (proxy *ProxyHttpServer) handleHttps(w http.ResponseWriter, r *http.Request
 					return
 				}
 
-				if req.Close {
+				if closeConn {
 					ctx.Logf("Non-persistent connection; closing")
 					return
 				}
