@@ -5,1603 +5,1603 @@
 <head>
 
 
+    <title>HTML5 Tutorial</title>
 
-<title>HTML5 Tutorial</title>
 
- 
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
 
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide"
+          name="Keywords"/>
 
-<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+    <meta content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building."
+          name="Description"/>
 
-<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+    <script type="text/javascript">
 
-<script type="text/javascript">
+        <!--
 
-<!--
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        //-->
 
-//-->
+    </script>
 
-</script>
+    <script type="text/javascript">
 
-<script type="text/javascript">
+        <!--
 
-<!--
+        function searchfield_focus(obj) {
 
-function searchfield_focus(obj)
+            obj.style.color = ""
 
-{
+            obj.style.fontStyle = ""
 
-obj.style.color=""
+            if (obj.value == "Search w3schools.com") {
+                obj.value = ""
+            }
 
-obj.style.fontStyle=""
+        }
 
-if (obj.value=="Search w3schools.com")
+        var pageTracker = _gat._getTracker("UA-3855518-1");
 
-	{obj.value=""}
+        pageTracker._initData();
 
-}
+        pageTracker._trackPageview();
 
-var pageTracker = _gat._getTracker("UA-3855518-1");
+        var addr = document.location.href;
 
-pageTracker._initData();
+        function displayError() {
 
-pageTracker._trackPageview();
+            document.getElementById("err_url").value = addr;
 
-var addr=document.location.href;
+            document.getElementById("err_form").style.display = "block";
 
-function displayError()
+            document.getElementById("err_desc").focus();
 
-{
+            hideSent();
 
-document.getElementById("err_url").value=addr;
+        }
 
-document.getElementById("err_form").style.display="block";
+        function hideError() {
 
-document.getElementById("err_desc").focus();
+            document.getElementById("err_form").style.display = "none";
 
-hideSent();
+        }
 
-}
+        function hideSent() {
 
-function hideError()
+            document.getElementById("err_sent").style.display = "none";
 
-{
+        }
 
-document.getElementById("err_form").style.display="none";
+        function sendErr() {
 
-}
+            var xmlhttp;
 
-function hideSent()
+            var err_url = document.getElementById("err_url").value;
 
-{
+            var err_email = document.getElementById("err_email").value;
 
-document.getElementById("err_sent").style.display="none";
+            var err_desc = document.getElementById("err_desc").value;
 
-}
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 
-function sendErr()
+                xmlhttp = new XMLHttpRequest();
 
-{
+            } else {// code for IE6, IE5
 
-var xmlhttp;
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
-var err_url=document.getElementById("err_url").value;
+            }
 
-var err_email=document.getElementById("err_email").value;
+            xmlhttp.open("POST", "/err_sup.asp", true);
 
-var err_desc=document.getElementById("err_desc").value;
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-if (window.XMLHttpRequest)
+            xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
 
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
+            hideError();
 
-  xmlhttp=new XMLHttpRequest();
+            document.getElementById("err_sent").style.display = "block";
 
-  }
+        }
 
-else
+        function click_expandingMenuHeader(obj, sectionName) {
 
-  {// code for IE6, IE5
+            var x = document.getElementById("cssprop_" + sectionName).parentNode.className;
 
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            if (x.indexOf("expandingMenuNotSelected") > -1) {
 
-  }
+                x = x.replace("expandingMenuNotSelected", "expandingMenuSelected");
 
-xmlhttp.open("POST","/err_sup.asp",true);
+                document.getElementById("cssprop_" + sectionName).parentNode.className = x;
 
-xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                document.getElementById("cssprop_" + sectionName).style.display = "block";
 
-xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+            } else {
 
-hideError();
+                x = x.replace("expandingMenuSelected", "expandingMenuNotSelected");
 
-document.getElementById("err_sent").style.display="block";
+                document.getElementById("cssprop_" + sectionName).parentNode.className = x;
 
-}
+                document.getElementById("cssprop_" + sectionName).style.display = "none";
 
-function click_expandingMenuHeader(obj,sectionName)
+            }
 
-{
+        }
 
-var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+        //-->
 
-if (x.indexOf("expandingMenuNotSelected")>-1)
+    </script>
 
-	{
+    <!--[if lt IE 7]>
 
-	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+    <style>
 
-	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+        #leftcolumn {
+            margin-left: 0
+        }
 
-	document.getElementById("cssprop_" + sectionName).style.display="block";
+    </style>
 
-	}
+    <![endif]-->
 
-else
+    <link href="/stdtheme.css" rel="stylesheet" type="text/css"/>
 
-	{
+    <style>
 
-	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+        #html5headline {
 
-	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+            font-size: 24px;
 
-	document.getElementById("cssprop_" + sectionName).style.display="none";
+            text-align: center;
 
-	}
+            background-color: #D9D9D9;
 
-}
+            margin: 0;
 
-//-->
+            padding: 0;
 
-</script>
+            height: 32px;
 
-<!--[if lt IE 7]>
+        }
 
-<style>
+        div.html5header {
 
-#leftcolumn{margin-left:0}
+            border: 5px solid #D9D9D9;
 
-</style>
+            width: 625px;
 
-<![endif]-->
+            height: 379px;
 
-<link rel="stylesheet" type="text/css" href="/stdtheme.css" />
+            margin: 0;
 
-<style>
+            padding: 0;
 
-#html5headline
+        }
 
-{
+        div.html5header #header_image {
 
-font-size:24px;
+            width: 290px;
 
-text-align:center;
+            height: 235px;
 
-background-color:#D9D9D9;
+            float: left;
 
-margin:0;
+            border: 10px solid #D9D9D9;
 
-padding:0;
+        }
 
-height:32px;
+        div.html5header #header_image div {
 
-}
+            width: 290px;
 
-div.html5header
+            height: 235px;
 
-{
+            margin: 0;
 
-border:5px solid #D9D9D9;
+            padding: 0;
 
-width:625px;
+        }
 
-height:379px;
 
-margin:0;
+        div.html5header #header_text {
 
-padding:0;
+            width: 275px;
 
-}
+            height: 235px;
 
-div.html5header #header_image
+            float: left;
 
-{
+            margin: 0;
 
-width:290px;
+            padding: 0;
 
-height:235px;
+            padding-left: 10px;
 
-float:left;
+            padding-right: 10px;
 
-border:10px solid #D9D9D9;
+            border: 10px solid #D9D9D9;
 
-}
+        }
 
-div.html5header #header_image div
+        div.html5header #header_icons {
 
-{
+            width: 628px;
 
-width:290px;
+            height: 84px;
 
-height:235px;
+            clear: both;
 
-margin:0;
+        }
 
-padding:0;
 
-}
+        div.html5header #header_icons ul {
 
+            list-style-type: none;
 
+            margin: 0;
 
-div.html5header #header_text
+            padding: 0;
 
-{
+            overflow: hidden;
 
-width:275px;
+        }
 
-height:235px;
+        div.html5header #header_icons li {
 
-float:left;
+            float: left;
 
-margin:0;
+            width: 104px;
 
-padding:0;
+            height: 92px;
 
-padding-left:10px;
+        }
 
-padding-right:10px;
+        div.html5header #header_icons #header_html5 {
+            background: url('img_logo_map.gif') 0 0;
+            background-repeat: no-repeat;
+        }
 
-border:10px solid #D9D9D9;
+        div.html5header #header_icons #header_multimedia {
+            background: url('img_logo_map.gif') -104px 0;
+            background-repeat: no-repeat;
+        }
 
-}
+        div.html5header #header_icons #header_3d {
+            background: url('img_logo_map.gif') -208px 0;
+            background-repeat: no-repeat;
+        }
 
-div.html5header #header_icons
+        div.html5header #header_icons #header_offline {
+            background: url('img_logo_map.gif') -312px 0;
+            background-repeat: no-repeat;
+        }
 
-{
+        div.html5header #header_icons #header_form {
+            background: url('img_logo_map.gif') -418px 0;
+            background-repeat: no-repeat;
+        }
 
-width:628px;
+        div.html5header #header_icons #header_css3 {
+            background: url('img_logo_map.gif') -521px 0;
+            background-repeat: no-repeat;
+        }
 
-height:84px;
 
-clear:both;
+        #header_text {
 
-}
+            font-size: 120%;
 
+        }
 
+        #header_text h2 {
 
-div.html5header #header_icons ul
+            text-align: center;
 
-{
+        }
 
-list-style-type:none;
+        div.html5header #header_icons #header_html5 {
 
-margin:0;
+            background: url('img_logo_map.gif') 0 -92px;
 
-padding:0;
+            background-repeat: no-repeat;
 
-overflow:hidden;
+        }
 
-}
+    </style>
 
-div.html5header #header_icons li
+    <script>
 
-{
+        selIcon = "html5";
 
-float:left;
+        function changeHeader(logoId, imgPos) {
 
-width:104px;
+            x = document.getElementById("header_text").childNodes;
 
-height:92px;
+            for (i = 0; i < x.length; i++) {
 
-}
+                if (x[i].nodeType == 1) {
 
-div.html5header #header_icons #header_html5{background:url('img_logo_map.gif') 0 0;background-repeat:no-repeat;}
+                    x[i].style.display = "none";
 
-div.html5header #header_icons #header_multimedia{background:url('img_logo_map.gif') -104px 0;background-repeat:no-repeat;}
+                }
 
-div.html5header #header_icons #header_3d{background:url('img_logo_map.gif') -208px 0;background-repeat:no-repeat;}
+            }
 
-div.html5header #header_icons #header_offline{background:url('img_logo_map.gif') -312px 0;background-repeat:no-repeat;}
+            x = document.getElementById("header_image").childNodes;
 
-div.html5header #header_icons #header_form{background:url('img_logo_map.gif') -418px 0;background-repeat:no-repeat;}
+            for (i = 0; i < x.length; i++) {
 
-div.html5header #header_icons #header_css3{background:url('img_logo_map.gif') -521px 0;background-repeat:no-repeat;}
+                if (x[i].nodeType == 1) {
 
+                    x[i].style.display = "none";
 
+                }
 
-#header_text
+            }
 
-{
+            try {
 
-font-size:120%;
+                document.getElementById('html5_vid').pause();
 
-}
+            } catch (er) {
 
-#header_text h2
 
-{
+            }
 
-text-align:center;
 
-}
+            x = document.getElementById("header_icons_list").childNodes;
 
-div.html5header #header_icons #header_html5
 
-{
+            document.getElementById("header_html5").style.backgroundPosition = "0 0"
 
-background:url('img_logo_map.gif') 0 -92px;
+            document.getElementById("header_multimedia").style.backgroundPosition = "-104px 0"
 
-background-repeat:no-repeat;
+            document.getElementById("header_3d").style.backgroundPosition = "-208px 0"
 
-}
+            document.getElementById("header_offline").style.backgroundPosition = "-312px 0"
 
-</style>
+            document.getElementById("header_form").style.backgroundPosition = "-418px 0"
 
-<script>
+            document.getElementById("header_css3").style.backgroundPosition = "-521px 0"
 
-selIcon="html5";
 
-function changeHeader(logoId,imgPos)
+            bgText = "header_text_" + logoId;
 
-	{
+            bgImage = "header_image_" + logoId;
 
-	x=document.getElementById("header_text").childNodes;
+            bgLogo = "header_" + logoId;
 
-	for (i=0;i<x.length;i++)
+            document.getElementById(bgImage).style.display = "block";
 
-	  {
+            document.getElementById(bgText).style.display = "inline";
 
-	  if(x[i].nodeType==1)
+            document.getElementById(bgLogo).style.backgroundPosition = imgPos + "px -92px"
 
-	  	{
+        }
 
-	  	x[i].style.display="none";
+        function iconHover(logoId, imgPos) {
 
-	  	}
+            bgLogo = "header_" + logoId;
 
-	  }
+            document.getElementById(bgLogo).style.backgroundPosition = imgPos + "px -92px"
 
-	x=document.getElementById("header_image").childNodes;
+        }
 
-	for (i=0;i<x.length;i++)
+        function iconHoverOut(logoId, imgPos) {
 
-	  {
+            if (selIcon != logoId) {
 
-	  if(x[i].nodeType==1)
+                bgLogo = "header_" + logoId;
 
-	  	{
+                document.getElementById(bgLogo).style.backgroundPosition = imgPos + "px 0"
 
-	  	x[i].style.display="none";
+            }
 
-	  	}
+        }
 
-	  }
 
-  	try
+        function playVideo() {
 
-  		{
+            try {
 
-  		document.getElementById('html5_vid').pause();
+                document.getElementById('html5_vid').play()
 
-  		}
+            } catch (er) {
 
-  	catch(er)
+                document.getElementById('header_image_multimedia').innerHTML = "";
 
-  		{
+                document.getElementById('header_image_multimedia').style.backgroundImage = "url('img_html5_multimedia.jpg')";
 
-	
+            }
 
-  		}
+        }
 
-
-
-	x=document.getElementById("header_icons_list").childNodes;
-
-	
-
-	document.getElementById("header_html5").style.backgroundPosition="0 0"
-
-	document.getElementById("header_multimedia").style.backgroundPosition="-104px 0"
-
-	document.getElementById("header_3d").style.backgroundPosition="-208px 0"
-
-	document.getElementById("header_offline").style.backgroundPosition="-312px 0"
-
-	document.getElementById("header_form").style.backgroundPosition="-418px 0"
-
-	document.getElementById("header_css3").style.backgroundPosition="-521px 0"
-
-					
-
-	bgText="header_text_"+logoId;
-
-	bgImage="header_image_"+logoId;
-
-	bgLogo="header_"+logoId;
-
-	document.getElementById(bgImage).style.display="block";
-
-	document.getElementById(bgText).style.display="inline";	
-
-	document.getElementById(bgLogo).style.backgroundPosition=imgPos+"px -92px"
-
-	}
-
-function iconHover(logoId,imgPos)
-
-	{
-
-	bgLogo="header_"+logoId;
-
-	document.getElementById(bgLogo).style.backgroundPosition=imgPos+"px -92px"
-
-	}
-
-function iconHoverOut(logoId,imgPos)
-
-	{
-
-	if (selIcon!=logoId)
-
-		{
-
-		bgLogo="header_"+logoId;
-
-		document.getElementById(bgLogo).style.backgroundPosition=imgPos+"px 0"
-
-		}
-
-	}
-
-	
-
-function playVideo()
-
-{
-
-try
-
-	{
-
-	document.getElementById('html5_vid').play()
-
-	}
-
-catch(er)
-
-	{
-
-	document.getElementById('header_image_multimedia').innerHTML="";
-
-	document.getElementById('header_image_multimedia').style.backgroundImage="url('img_html5_multimedia.jpg')";
-
-	}
-
-}
-
-</script>
+    </script>
 
 </head>
 
 <body>
 
 
-
 <div style="position:relative;width:100%;margin-top:0px;margin-bottom:0px;">
 
-<a id="top"></a>
+    <a id="top"></a>
 
-<div style="width:960px;margin-top:5px;margin-left:auto;margin-right:auto">
+    <div style="width:960px;margin-top:5px;margin-left:auto;margin-right:auto">
 
-<div style="width:960px;height:74px;margin:0;padding:0;">
+        <div style="width:960px;height:74px;margin:0;padding:0;">
 
-<div style="width:340px;text-align:left;float:left;">
+            <div style="width:340px;text-align:left;float:left;">
 
-	<a href="http://www.w3schools.com"><img width="336" height="69" src="/images/w3schoolslogo.gif" alt="W3Schools.com" style="border:0;margin-top:5px;" /></a>
+                <a href="http://www.w3schools.com"><img alt="W3Schools.com" height="69" src="/images/w3schoolslogo.gif"
+                                                        style="border:0;margin-top:5px;" width="336"/></a>
+
+            </div>
+
+
+            <div style="width:300px;float:right;text-align:right;margin-top:20px;margin-right:14px;margin-bottom:5px;">
+
+                <div id="google_translate_element" style="display:none"></div>
+
+                <div id="translate_link" style="margin-bottom:14px">
+
+                    <a class="topnav" href="#"
+
+                       onclick="document.getElementById('google_translate_element').style.display='inline';document.getElementById('translate_link').style.display='none';return false;">
+
+                        TRANSLATE
+
+                    </a>
+
+                </div>
+
+                <form action="http://www.google.com/search" method="get" name="searchform" style="font-size:11px;"
+                      target="_blank">
+
+                    <input name="sitesearch" type="hidden" value="www.w3schools.com"/>
+
+                    <input name="as_q"
+                           onfocus="searchfield_focus(this)"
+
+                           size="20" style="width:150px;color:#808080;font-style:italic;margin:0;" type="text" value="Search w3schools.com"/><input style="margin:0;"
+                                                                                                  title="Search"
+                                                                                                  type="submit"
+                                                                                                  value="Search"/>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div id="topnav" style="clear:both;width:960px;height:25px;">
+
+            <div style="float:left;width:400px;word-spacing:12px;font-size:90%;padding-left:15px;padding-top:6px;white-space:nowrap;text-align:left;">
+
+                <a class="topnav" href="/default.asp" target="_top">HOME </a>
+
+                <a class="topnav" href="/html/default.asp" target="_top">HTML </a>
+
+                <a class="topnav" href="/css/default.asp" target="_top">CSS </a>
+
+                <a class="topnav" href="/xml/default.asp" target="_top">XML </a>
+
+                <a class="topnav" href="/js/default.asp" target="_top">JAVASCRIPT </a>
+
+                <a class="topnav" href="/asp/default.asp" target="_top">ASP </a>
+
+                <a class="topnav" href="/php/default.asp" target="_top">PHP </a>
+
+                <a class="topnav" href="/sql/default.asp" target="_top">SQL </a>
+
+                <a class="topnav" href="/sitemap/default.asp" target="_top">MORE...</a>
+
+            </div>
+
+            <div style="float:right;width:280px;word-spacing:6px;font-size:80%;padding-right:13px;padding-top:7px;color:#888888;white-space:nowrap;text-align:right;">
+
+                <a class="topnav" href="/sitemap/default.asp#references" target="_top">REFERENCES</a> |
+
+                <a class="topnav" href="/sitemap/default.asp#examples" target="_top">EXAMPLES</a> |
+
+                <a class="topnav" href="/forum/default.asp" target="_top">FORUM</a> |
+
+                <a class="topnav" href="/about/default.asp" target="_top">ABOUT</a>
+
+            </div>
+
+        </div>
+
+
+        <div style="width:960px;height:94px;position:relative;margin-left:auto;margin-right:auto;margin:0px;padding:0px;overflow:hidden">
+
+            <script src='http://partner.googleadservices.com/gampad/google_service.js' type='text/javascript'>
+
+            </script>
+
+            <script type='text/javascript'>
+
+                GS_googleAddAdSenseService("ca-pub-3440800076797949");
+
+                GS_googleEnableAllServices();
+
+            </script>
+
+            <script type='text/javascript'>
+
+
+                GA_googleAddSlot("ca-pub-3440800076797949", "MainLeaderboard");
+
+                GA_googleAddSlot("ca-pub-3440800076797949", "SmallPS");
+
+                GA_googleAddSlot("ca-pub-3440800076797949", "LargePS");
+
+                GA_googleAddSlot("ca-pub-3440800076797949", "BottomRectangle");
+
+                GA_googleAddSlot("ca-pub-3440800076797949", "SkyScraper");
+
+
+                GA_googleAddSlot("ca-pub-3440800076797949", "TopRectangle");
+
+            </script>
+
+            <script type='text/javascript'>
+
+                GA_googleFetchAds();
+
+            </script>
+
+            <!-- TopRectangle -->
+
+            <script type='text/javascript'>
+
+                GA_googleFillSlot("TopRectangle");
+
+            </script>
+
+            <div style="width:728px;height:90px;position:absolute;right:0px;top:0px;margin:0;padding:0;overflow:hidden;">
+
+
+                <!-- MainLeaderboard -->
+
+                <script type='text/javascript'>
+
+                    GA_googleFillSlot("MainLeaderboard");
+
+                </script>
+
+
+            </div>
+        </div>
+
+        <div style="width:960px;padding:0px;margin:0px;">
+
+            <div id="leftcolumn" style="width:170px;margin:0;padding:0;margin-top:5px;float:left;"><h2 class="left">
+                <span class="left_h2">HTML5</span> Tutorial</h2>
+
+                <a href="default.asp" style='font-weight:bold;' target="_top">HTML5 Home</a><br/>
+
+                <a href="html5_intro.asp" target="_top">HTML5 Introduction</a><br/>
+
+                <a href="html5_new_elements.asp" target="_top">HTML5 New Elements</a><br/>
+
+                <a href="html5_video.asp" target="_top">HTML5 Video</a><br/>
+
+                <a href="html5_video_dom.asp" target="_top">HTML5 Video/DOM</a><br/>
+
+                <a href="html5_audio.asp" target="_top">HTML5 Audio</a><br/>
+
+                <a href="html5_draganddrop.asp" target="_top">HTML5 Drag and Drop</a><br/>
+
+                <a href="html5_canvas.asp" target="_top">HTML5 Canvas</a><br/>
+
+                <a href="html5_svg.asp" target="_top">HTML5 SVG</a><br/>
+
+                <a href="html5_canvas_vs_svg.asp" target="_top">HTML5 Canvas vs. SVG</a><br/>
+
+                <a href="html5_geolocation.asp" target="_top">HTML5 Geolocation</a><br/>
+
+                <a href="html5_webstorage.asp" target="_top">HTML5 Web Storage</a><br/>
+
+                <a href="html5_app_cache.asp" target="_top">HTML5 App Cache</a><br/>
+
+                <a href="html5_webworkers.asp" target="_top">HTML5 Web Workers</a><br/>
+
+                <a href="html5_serversentevents.asp" target="_top">HTML5 SSE</a><br/>
+
+                <br/>
+
+                <h2 class="left"><span class="left_h2">HTML5</span> Forms</h2>
+
+                <a href="html5_form_input_types.asp" target="_top">HTML5 Input Types</a><br/>
+
+                <a href="html5_form_elements.asp" target="_top">HTML5 Form Elements</a><br/>
+
+                <a href="html5_form_attributes.asp" target="_top">HTML5 Form Attributes</a><br/>
+
+                <br/>
+
+                <h2 class="left"><span class="left_h2">HTML5</span> Reference</h2>
+
+                <a href="html5_reference.asp" target="_top">HTML5 Tags</a><br/>
+
+                <a href="html5_ref_globalattributes.asp" target="_top">HTML5 Attributes</a><br/>
+
+                <a href="html5_ref_eventattributes.asp" target="_top">HTML5 Events</a><br/>
+
+                <a href="html5_ref_av_dom.asp" target="_top">HTML5 Audio/Video</a><br/>
+
+                <a href="html5_ref_canvas.asp" target="_top">HTML5 Canvas 2d</a><br/>
+
+                <a href="html5_ref_dtd.asp" target="_top">HTML Valid DTDs</a><br/>
+
+                <br/>
+
+                <h2 class="left"><span class="left_h2">HTML5</span> Tags</h2>
+
+                <a href="tag_comment.asp" target="_top">&lt;!--&gt;</a><br/>
+
+                <a href="tag_doctype.asp" target="_top">&lt;!DOCTYPE&gt;</a><br/>
+
+                <a href="tag_a.asp" target="_top">&lt;a&gt;</a><br/>
+
+                <a href="tag_abbr.asp" target="_top">&lt;abbr&gt;</a><br/>
+
+                <a href="tag_acronym.asp" target="_top">&lt;acronym&gt;</a><br/>
+
+                <a href="tag_address.asp" target="_top">&lt;address&gt;</a><br/>
+
+                <a href="tag_applet.asp" target="_top">&lt;applet&gt;</a><br/>
+
+                <a href="tag_area.asp" target="_top">&lt;area&gt;</a><br/>
+
+                <a href="tag_article.asp" target="_top">&lt;article&gt;</a><br/>
+
+                <a href="tag_aside.asp" target="_top">&lt;aside&gt;</a><br/>
+
+                <a href="tag_audio.asp" target="_top">&lt;audio&gt;</a><br/>
+
+                <a href="tag_b.asp" target="_top">&lt;b&gt;</a><br/>
+
+                <a href="tag_base.asp" target="_top">&lt;base&gt;</a><br/>
+
+                <a href="tag_basefont.asp" target="_top">&lt;basefont&gt;</a><br/>
+
+                <a href="tag_bdi.asp" target="_top">&lt;bdi&gt;</a><br/>
+
+                <a href="tag_bdo.asp" target="_top">&lt;bdo&gt;</a><br/>
+
+                <a href="tag_big.asp" target="_top">&lt;big&gt;</a><br/>
+
+                <a href="tag_blockquote.asp" target="_top">&lt;blockquote&gt;</a><br/>
+
+                <a href="tag_body.asp" target="_top">&lt;body&gt;</a><br/>
+
+                <a href="tag_br.asp" target="_top">&lt;br&gt;</a><br/>
+
+                <a href="tag_button.asp" target="_top">&lt;button&gt;</a><br/>
+
+                <a href="tag_canvas.asp" target="_top">&lt;canvas&gt;</a><br/>
+
+                <a href="tag_caption.asp" target="_top">&lt;caption&gt;</a><br/>
+
+                <a href="tag_center.asp" target="_top">&lt;center&gt;</a><br/>
+
+                <a href="tag_cite.asp" target="_top">&lt;cite&gt;</a><br/>
+
+                <a href="tag_phrase_elements.asp" target="_top">&lt;code&gt;</a><br/>
+
+                <a href="tag_col.asp" target="_top">&lt;col&gt;</a><br/>
+
+                <a href="tag_colgroup.asp" target="_top">&lt;colgroup&gt;</a><br/>
+
+                <a href="tag_command.asp" target="_top">&lt;command&gt;</a><br/>
+
+                <a href="tag_datalist.asp" target="_top">&lt;datalist&gt;</a><br/>
+
+                <a href="tag_dd.asp" target="_top">&lt;dd&gt;</a><br/>
+
+                <a href="tag_del.asp" target="_top">&lt;del&gt;</a><br/>
+
+                <a href="tag_details.asp" target="_top">&lt;details&gt;</a><br/>
+
+                <a href="tag_phrase_elements.asp" target="_top">&lt;dfn&gt;</a><br/>
+
+                <a href="tag_dir.asp" target="_top">&lt;dir&gt;</a><br/>
+
+                <a href="tag_div.asp" target="_top">&lt;div&gt;</a><br/>
+
+                <a href="tag_dl.asp" target="_top">&lt;dl&gt;</a><br/>
+
+                <a href="tag_dt.asp" target="_top">&lt;dt&gt;</a><br/>
+
+                <a href="tag_phrase_elements.asp" target="_top">&lt;em&gt;</a><br/>
+
+                <a href="tag_embed.asp" target="_top">&lt;embed&gt;</a><br/>
+
+                <a href="tag_fieldset.asp" target="_top">&lt;fieldset&gt;</a><br/>
+
+                <a href="tag_figcaption.asp" target="_top">&lt;figcaption&gt;</a><br/>
+
+                <a href="tag_figure.asp" target="_top">&lt;figure&gt;</a><br/>
+
+                <a href="tag_font.asp" target="_top">&lt;font&gt;</a><br/>
+
+                <a href="tag_footer.asp" target="_top">&lt;footer&gt;</a><br/>
+
+                <a href="tag_form.asp" target="_top">&lt;form&gt;</a><br/>
+
+                <a href="tag_frame.asp" target="_top">&lt;frame&gt;</a><br/>
+
+                <a href="tag_frameset.asp" target="_top">&lt;frameset&gt;</a><br/>
+
+                <a href="tag_hn.asp" target="_top">&lt;h1&gt; - &lt;h6&gt;</a><br/>
+
+                <a href="tag_head.asp" target="_top">&lt;head&gt;</a><br/>
+
+                <a href="tag_header.asp" target="_top">&lt;header&gt;</a><br/>
+
+                <a href="tag_hgroup.asp" target="_top">&lt;hgroup&gt;</a><br/>
+
+                <a href="tag_hr.asp" target="_top">&lt;hr&gt;</a><br/>
+
+                <a href="tag_html.asp" target="_top">&lt;html&gt;</a><br/>
+
+                <a href="tag_i.asp" target="_top">&lt;i&gt;</a><br/>
+
+                <a href="tag_iframe.asp" target="_top">&lt;iframe&gt;</a><br/>
+
+                <a href="tag_img.asp" target="_top">&lt;img&gt;</a><br/>
+
+                <a href="tag_input.asp" target="_top">&lt;input&gt;</a><br/>
+
+                <a href="tag_ins.asp" target="_top">&lt;ins&gt;</a><br/>
+
+                <a href="tag_keygen.asp" target="_top">&lt;keygen&gt;</a><br/>
+
+                <a href="tag_phrase_elements.asp" target="_top">&lt;kbd&gt;</a><br/>
+
+                <a href="tag_label.asp" target="_top">&lt;label&gt;</a><br/>
+
+                <a href="tag_legend.asp" target="_top">&lt;legend&gt;</a><br/>
+
+                <a href="tag_li.asp" target="_top">&lt;li&gt;</a><br/>
+
+                <a href="tag_link.asp" target="_top">&lt;link&gt;</a><br/>
+
+                <a href="tag_map.asp" target="_top">&lt;map&gt;</a><br/>
+
+                <a href="tag_mark.asp" target="_top">&lt;mark&gt;</a><br/>
+
+                <a href="tag_menu.asp" target="_top">&lt;menu&gt;</a><br/>
+
+                <a href="tag_meta.asp" target="_top">&lt;meta&gt;</a><br/>
+
+                <a href="tag_meter.asp" target="_top">&lt;meter&gt;</a><br/>
+
+                <a href="tag_nav.asp" target="_top">&lt;nav&gt;</a><br/>
+
+                <a href="tag_noframes.asp" target="_top">&lt;noframes&gt;</a><br/>
+
+                <a href="tag_noscript.asp" target="_top">&lt;noscript&gt;</a><br/>
+
+                <a href="tag_object.asp" target="_top">&lt;object&gt;</a><br/>
+
+                <a href="tag_ol.asp" target="_top">&lt;ol&gt;</a><br/>
+
+                <a href="tag_optgroup.asp" target="_top">&lt;optgroup&gt;</a><br/>
+
+                <a href="tag_option.asp" target="_top">&lt;option&gt;</a><br/>
+
+                <a href="tag_output.asp" target="_top">&lt;output&gt;</a><br/>
+
+                <a href="tag_p.asp" target="_top">&lt;p&gt;</a><br/>
+
+                <a href="tag_param.asp" target="_top">&lt;param&gt;</a><br/>
+
+                <a href="tag_pre.asp" target="_top">&lt;pre&gt;</a><br/>
+
+                <a href="tag_progress.asp" target="_top">&lt;progress&gt;</a><br/>
+
+                <a href="tag_q.asp" target="_top">&lt;q&gt;</a><br/>
+
+                <a href="tag_rp.asp" target="_top">&lt;rp&gt;</a><br/>
+
+                <a href="tag_rt.asp" target="_top">&lt;rt&gt;</a><br/>
+
+                <a href="tag_ruby.asp" target="_top">&lt;ruby&gt;</a><br/>
+
+                <a href="tag_s.asp" target="_top">&lt;s&gt;</a><br/>
+
+                <a href="tag_phrase_elements.asp" target="_top">&lt;samp&gt;</a><br/>
+
+                <a href="tag_script.asp" target="_top">&lt;script&gt;</a><br/>
+
+                <a href="tag_section.asp" target="_top">&lt;section&gt;</a><br/>
+
+                <a href="tag_select.asp" target="_top">&lt;select&gt;</a><br/>
+
+                <a href="tag_small.asp" target="_top">&lt;small&gt;</a><br/>
+
+                <a href="tag_source.asp" target="_top">&lt;source&gt;</a><br/>
+
+                <a href="tag_span.asp" target="_top">&lt;span&gt;</a><br/>
+
+                <a href="tag_strike.asp" target="_top">&lt;strike&gt;</a><br/>
+
+                <a href="tag_phrase_elements.asp" target="_top">&lt;strong&gt;</a><br/>
+
+                <a href="tag_style.asp" target="_top">&lt;style&gt;</a><br/>
+
+                <a href="tag_sup.asp" target="_top">&lt;sub&gt;</a><br/>
+
+                <a href="tag_summary.asp" target="_top">&lt;summary&gt;</a><br/>
+
+                <a href="tag_sup.asp" target="_top">&lt;sup&gt;</a><br/>
+
+                <a href="tag_table.asp" target="_top">&lt;table&gt;</a><br/>
+
+                <a href="tag_tbody.asp" target="_top">&lt;tbody&gt;</a><br/>
+
+                <a href="tag_td.asp" target="_top">&lt;td&gt;</a><br/>
+
+                <a href="tag_textarea.asp" target="_top">&lt;textarea&gt;</a><br/>
+
+                <a href="tag_tfoot.asp" target="_top">&lt;tfoot&gt;</a><br/>
+
+                <a href="tag_th.asp" target="_top">&lt;th&gt;</a><br/>
+
+                <a href="tag_thead.asp" target="_top">&lt;thead&gt;</a><br/>
+
+                <a href="tag_time.asp" target="_top">&lt;time&gt;</a><br/>
+
+                <a href="tag_title.asp" target="_top">&lt;title&gt;</a><br/>
+
+                <a href="tag_tr.asp" target="_top">&lt;tr&gt;</a><br/>
+
+                <a href="tag_track.asp" target="_top">&lt;track&gt;</a><br/>
+
+                <a href="tag_tt.asp" target="_top">&lt;tt&gt;</a><br/>
+
+                <a href="tag_u.asp" target="_top">&lt;u&gt;</a><br/>
+
+                <a href="tag_ul.asp" target="_top">&lt;ul&gt;</a><br/>
+
+                <a href="tag_phrase_elements.asp" target="_top">&lt;var&gt;</a><br/>
+
+                <a href="tag_video.asp" target="_top">&lt;video&gt;</a><br/>
+
+                <a href="tag_wbr.asp" target="_top">&lt;wbr&gt;</a><br/>
+
+                <br/></div>
+
+            <div style="width:634px;margin:0px;padding:0px;background-color:#ffffff;color:#000000;padding-bottom:8px;padding-right:5px;padding-top:4px;float:left;">
+
+
+                <h1>HTML5 <span class="color_h1">Tutorial</span></h1>
+
+                <div class="chapter">
+
+                    <div class="prev"><a class="chapter" href="/default.asp">&laquo; W3Schools Home</a></div>
+
+                    <div class="next"><a class="chapter" href="html5_intro.asp">Next Chapter &raquo;</a></div>
+
+                </div>
+
+                <br/>
+
+                <div class="html5header">
+
+                    <div id="html5headline">HTML5 is The New HTML Standard</div>
+
+                    <div id="header_image">
+
+
+                        <div id="header_image_html5" style="background:url('img_html5_html5.gif');"></div>
+
+                        <div id="header_image_multimedia"
+                             style="display:none;margin:0;padding:0;padding-top:20px;height:215px;text-align:center">
+
+                            <video controls="controls" id="html5_vid" width="270">
+
+                                <source src="mov_bbb.mp4" type="video/mp4"/>
+
+                                <source src="mov_bbb.ogg" type="video/ogg"/>
+
+                                <source src="mov_bbb.webm" type="video/webm"/>
+
+                                Your browser does not support the video tag.
+
+                            </video>
+
+                            <p style="text-align:center;margin:0;padding:0">Video courtesy of <a
+                                    href="http://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a></p>
+
+                        </div>
+
+                        <div id="header_image_3d" style="display:none;background:url('img_html5_3d.jpg')"></div>
+
+                        <div id="header_image_offline"
+                             style="display:none;background:url('img_html5_offline.jpg')"></div>
+
+                        <div id="header_image_form" style="display:none;background:url('img_html5_form.jpg')"></div>
+
+                        <div id="header_image_css3" style="display:none;background:url('img_html5_css3.jpg')"></div>
+
+                    </div>
+
+                    <div id="header_text">
+
+                        <div id="header_text_html5">
+
+                            <h2>HTML5</h2>
+
+                            <ul>
+
+                                <li>New Elements</li>
+
+                                <li>New Attributes</li>
+
+                                <li>Full CSS3 Support</li>
+
+                                <li>Video and Audio</li>
+
+                                <li>2D/3D Graphics</li>
+
+                                <li>Local Storage</li>
+
+                                <li>Local SQL Database</li>
+
+                                <li>Web Applications</li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div id="header_text_multimedia" style="display:none;">
+
+                            <h2>HTML5 Multimedia</h2>
+
+                            <p>With HTML5, playing video and audio is easier than ever.</p>
+
+                            <ul>
+
+                                <li>HTML5 <a href="html5_video.asp">&lt;video&gt;</a></li>
+
+                                <li>HTML5 <a href="html5_audio.asp">&lt;audio&gt;</a></li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div id="header_text_offline" style="display:none">
+
+                            <h2>HTML5 Applications</h2>
+
+                            <p>With HTML5, web application development is easier than ever.</p>
+
+                            <ul>
+
+                                <li>Local data storage</li>
+
+                                <li>Local file access</li>
+
+                                <li>Local SQL database</li>
+
+                                <li>Application cache</li>
+
+                                <li>Javascript workers</li>
+
+                                <li>XHTMLHttpRequest 2</li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div id="header_text_3d" style="display:none">
+
+                            <h2>HTML5 Graphics</h2>
+
+                            <p>With HTML5, drawing graphics is easier than ever:</p>
+
+                            <ul>
+
+                                <li>Using the <a href="html5_canvas.asp">&lt;canvas&gt;</a> element</li>
+
+                                <li>Using inline <a href="/svg/default.asp">SVG</a></li>
+
+                                <li>Using <a href="/css3/default.asp">CSS3 2D/3D</a></li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div id="header_text_css3" style="display:none">
+
+                            <h2>HTML5 uses CSS3</h2>
+
+                            <ul>
+
+                                <li>New Selectors</li>
+
+                                <li>New Properties</li>
+
+                                <li>Animations</li>
+
+                                <li>2D/3D Transformations</li>
+
+                                <li>Rounded Corners</li>
+
+                                <li>Shadow Effects</li>
+
+                                <li>Downloadable Fonts</li>
+
+                            </ul>
+
+                            <p>Read more in our <a href="/css3/default.asp">CSS3 tutorial.</a></p>
+
+                        </div>
+
+                        <div id="header_text_form" style="display:none">
+
+                            <h2>Semantic Elements</h2>
+
+                            <p>New elements for headers, footers, menues, sections and articles.</p>
+
+                            <h2>HTML5 Forms</h2>
+
+                            <p>New form elements, new attributes, new input types, automatic validation.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div id="header_icons">
+
+                        <ul id="header_icons_list">
+
+                            <li id="header_html5" onclick="changeHeader('html5','0');selIcon='html5'"
+                                onmouseout="iconHoverOut('html5','0')" onmouseover="iconHover('html5','0')"
+                                title="HTML5"></li>
+
+                            <li id="header_multimedia"
+                                onclick="changeHeader('multimedia','-104');selIcon='multimedia';playVideo()"
+                                onmouseout="iconHoverOut('multimedia','-104')"
+                                onmouseover="iconHover('multimedia','-104')" title="HTML5 Multimedia"></li>
+
+                            <li id="header_3d" onclick="changeHeader('3d','-208');selIcon='3d'"
+                                onmouseout="iconHoverOut('3d','-208')" onmouseover="iconHover('3d','-208')"
+                                title="HTML5 Graphics"></li>
+
+                            <li id="header_offline" onclick="changeHeader('offline','-312');selIcon='offline'"
+                                onmouseout="iconHoverOut('offline','-312')" onmouseover="iconHover('offline','-312')"
+                                title="HTML5 Local Storage"></li>
+
+                            <li id="header_form" onclick="changeHeader('form','-418');selIcon='form'"
+                                onmouseout="iconHoverOut('form','-418')"
+                                onmouseover="iconHover('form','-418')" style="width:105px;"
+                                title="HTML5 Semantics and Forms"></li>
+
+                            <li id="header_css3" onclick="changeHeader('css3','-521');selIcon='css3'"
+                                onmouseout="iconHoverOut('css3','-521')" onmouseover="iconHover('css3','-521')"
+                                title="HTML5 CSS3"></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <br/>
+
+                <h2 class="tutheader">Examples in Each Chapter</h2>
+
+                <p>With our HTML editor, you can edit the HTML, and click on a button to view the result.</p>
+
+                <div class="example">
+
+                    <h2 class="example">Example</h2>
+
+                    <div class="example_code notranslate">
+
+                        &lt;!DOCTYPE HTML&gt;<br/>
+
+                        &lt;html&gt;<br/>
+
+                        &lt;body&gt;<br/>
+
+                        <br/>
+
+                        &lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;<br/>
+
+                        &nbsp; &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot; /&gt;<br/>
+
+                        &nbsp; &lt;source src=&quot;movie.ogg&quot; type=&quot;video/ogg&quot; /&gt;<br/>
+
+                        &nbsp; &lt;source src=&quot;movie.webm&quot; type=&quot;video/webm&quot; /&gt;<br/>
+
+                        Your browser does not support the video tag.<br/>
+
+                        &lt;/video&gt;<br/>
+
+                        <br/>
+
+                        &lt;/body&gt;<br/>
+
+                        &lt;/html&gt;
+
+                    </div>
+
+                    <br/>
+
+                    <a class="tryitbtn" href="tryit.asp?filename=tryhtml5_video_bear" target="_blank">Try it yourself
+                        &raquo;</a></div>
+
+                <p><b>Click on the &quot;Try it yourself&quot; button to see how it works</b></p>
+
+                <p><b><a href="html5_intro.asp">Start learning HTML5 now!</a></b></p>
+
+
+                <h2 class="tutheader">HTML5 References</h2>
+
+                <p>At W3Schools you will find complete references about tags, global attributes,
+
+                    standard events, and more.</p>
+
+                <p>
+
+                    <a href="html5_reference.asp">HTML5 Tag Reference</a>
+
+                </p>
+
+
+                <br/>
+
+                <div class="chapter">
+
+                    <div class="prev"><a class="chapter" href="/default.asp">&laquo; W3Schools Home</a></div>
+
+                    <div class="next"><a class="chapter" href="html5_intro.asp">Next Chapter &raquo;</a></div>
+
+                </div>
+
+
+                <!-- **** SPOTLIGHTS 1 **** -->
+
+                <!-- SmallPS -->
+
+                <script type='text/javascript'>
+
+                    GA_googleFillSlot("SmallPS");
+
+                </script>
+
+                <!-- **** SPOTLIGHTS 2 **** -->
+
+                <!-- LargePS -->
+
+                <script type='text/javascript'>
+
+                    GA_googleFillSlot("LargePS");
+
+                </script>
+
+                <!-- **** SPOTLIGHTS 3 **** -->
+
+                <!-- BottomRectangle -->
+
+                <div style="width:340px;margin:auto">
+
+                    <script type='text/javascript'>
+
+                        GA_googleFillSlot("BottomRectangle");
+
+                    </script>
+
+                </div>
+
+
+                <!-- BottomBanner -->
+
+                <script type='text/javascript'>
+
+                    GA_googleFillSlot("BottomBanner");
+
+                </script>
+
+
+                <div id="err_form" style="display:none">
+
+                    <h2>Your suggestion:</h2>
+
+                    <p><label for="err_email">Your E-mail (optional):</label> <input id="err_email" name="err_email"
+                                                                                     type="text"/></p>
+
+                    <p><label for="err_url">Page address:</label> <input disabled="disabled" id="err_url" name="err_url"
+                                                                         type="text"/></p>
+
+                    <p><label for="err_desc">Description:</label> <textarea cols="92" id="err_desc" name="err_desc"
+                                                                            rows="20"></textarea></p>
+
+                    <p class="submit"><input onclick="sendErr()" type="button" value="Submit"/></p>
+
+                    <div class="err_close" onclick="hideError()">Close [X]</div>
+
+                </div>
+
+                <div id="err_sent" style="display:none">
+
+                    <h2>Thank you for your support.</h2>
+
+                    <div class="err_close" onclick="hideSent()">Close [X]</div>
+
+                </div>
+
+            </div>
+
+
+            <div id="rightcolumn" style="width:150px;margin:0px;padding:0px;float:left">
+
+                <table>
+
+                    <tr>
+                        <th>WEB HOSTING</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.lunarpages.com/id/w3schools/goto/w3schools" rel="nofollow"
+                               target="_blank">Best Web Hosting</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.eukhost.com" rel="nofollow" target="_blank">PHP MySQL Hosting</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.web-hosting-top.com/coupons" rel="nofollow" target="_blank">Best Hosting
+                                Coupons</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.heartinternet.co.uk/index.shtml" rel="nofollow" target="_blank">UK
+                                Reseller Hosting</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.webhosting.uk.com/cloud-hosting.php" rel="nofollow" target="_blank">Cloud
+                                Hosting</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.justhost.com/track/w3schools/textlink" rel="nofollow" target="_blank">Top
+                                Web Hosting</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.doteasy.com/index.cfm?A=w3text" rel="nofollow" target="_blank">$3.98
+                                Unlimited Hosting</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.website.com/" rel="nofollow" target="_blank">Premium Website Design</a>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+                <table>
+
+                    <tr>
+                        <th>WEB BUILDING</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+
+                            <a href="http://www.altova.com/ref/?s=w3s_text&amp;q=xmlspy" rel="nofollow" target="_blank">Download
+                                XML Editor</a>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.wix.com/html5/now-on-wix?utm_campaign=ma_w3schools.com&amp;experiment_id=ma_html_w3schools.comlink1" rel="nofollow"
+                               target="_blank">FREE
+                                Website BUILDER</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.dreamtemplate.com/?ref=w3txtfree" rel="nofollow" target="_blank">Free
+                                Website Templates</a>
+
+                            <a href="http://www.dreamtemplate.com/?ref=w3txtfree" rel="nofollow" target="_blank">Free
+                                CSS Templates</a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="http://www.wix.com/html5/now-on-wix?utm_campaign=ma_w3schools.com&amp;experiment_id=ma_html_w3schools.comlink2"
+                               rel="nofollow" target="_blank">CREATE HTML Websites</a>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+                <table>
+
+                    <tr>
+                        <th>W3SCHOOLS EXAMS</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="/cert/default.asp" target="_blank">Get Certified in:<br/>HTML, CSS, JavaScript,
+                                XML, PHP, and ASP</a>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+                <table>
+
+                    <tr>
+                        <th>W3SCHOOLS BOOKS</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="/books/default.asp" target="_blank">
+
+                                New Books:<br/>HTML, CSS<br/>
+
+                                JavaScript, and Ajax</a>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+                <table>
+
+                    <tr>
+                        <th>STATISTICS</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="/browsers/browsers_stats.asp" target="_top">Browser Statistics</a><br/>
+
+                            <a href="/browsers/browsers_os.asp" target="_top">Browser OS</a><br/>
+
+                            <a href="/browsers/browsers_display.asp" target="_top">Browser Display</a>
+
+                        </td>
+                    </tr>
+                </table>
+
+                <script type="text/javascript">
+
+                    <!--
+
+                    function sharethis() {
+
+                        txt = '<a href="http://www.facebook.com/sharer.php?u=' + document.URL + '" target="_blank" title="Facebook">'
+
+                        txt = txt + '<img src="/images/share_facebook.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+
+                        txt = txt + '<a href="http://twitter.com/home?status=Currently reading ' + document.URL + '" target="_blank" title="Twitter">';
+
+                        txt = txt + '<img src="/images/share_twitter.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+
+                        txt = txt + '<a href="mailto:?&amp;subject=' + document.title + '&amp;body=Take%20a%20look%20at%20this%20page%20at%20W3Schools.com:%20' + document.URL + '" target="_blank" title="E-mail">';
+
+                        txt = txt + '<img src="/images/share_email.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+
+                        txt = txt + '<a href="http://delicious.com/save?v=5&noui&jump=close&url=' + document.URL + '&title=' + document.title + '" target="_blank" title="Delicious">';
+
+                        txt = txt + '<img src="/images/share_delicious.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+
+                        txt = txt + '<a href="http://www.reddit.com/submit?url=' + document.URL + '" target="_blank" title="Reddit">';
+
+                        txt = txt + '<img src="/images/share_reddit.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+
+                        txt = txt + '<a href="http://digg.com/submit?url=' + document.URL + '&amp;title=' + document.title + '" target="_blank" title="Digg">';
+
+                        txt = txt + '<img src="/images/share_digg.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+
+                        txt = txt + '<a href="http://www.stumbleupon.com/submit?url=' + document.URL + '%26title%3D' + document.title + '" target="_blank" title="Stumbleupon">';
+
+                        txt = txt + '<img src="/images/share_stumbleupon.gif" width="16px" height="16px" /></a>';
+
+                        document.getElementById("sharethis").innerHTML = txt;
+
+                    }
+
+                    //--></script>
+
+                <table>
+
+                    <tr>
+                        <th>SHARE THIS PAGE</th>
+                    </tr>
+
+                    <tr>
+
+                        <td id="sharethis">
+
+                            <div style="height:16px">
+
+                                <a href="#" onclick="sharethis();return false;">Share with &raquo;</a>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <table>
+
+                    <tr>
+                        <td><br/>
+
+                            <div style="width:124px;margin:auto">
+
+                                <!-- SkyScraper -->
+
+                                <script type='text/javascript'>
+
+                                    GA_googleFillSlot("SkyScraper");
+
+                                </script>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+        <br/>
+
+    </div>
+
+    <div style="width:100%;clear:both;margin:0;padding:0;background-color:transparent;background-image:url('/images/gradientbottom.jpg');background-repeat:repeat-x;position:relative;">
+
+        <div id="footer" style="width:960px;margin-left:auto;margin-right:auto;height:110px;">
+
+            <div style="float:left;width:200px;text-align:left;padding-left:3px;padding-top:11px;"><a
+                    href="http://www.w3schools.com">
+
+                <img alt="W3Schools.com" src="/images/w3schoolscom_gray.gif" style="border:0"/></a>
+
+            </div>
+
+            <div style="word-spacing:6px;font-size:80%;padding-right:12px;padding-top:19px;float:right;width:600px;text-align:right;">
+
+                <a href="" onclick="displayError();return false">REPORT ERROR</a> |
+
+                <a href="/default.asp" target="_top">HOME</a> |
+
+                <a href="#top" target="_top">TOP</a> |
+
+                <a href='/html5/default.asp?output=print' target="_blank">PRINT</a> |
+
+                <a href="/forum/default.asp" target="_blank">FORUM</a> |
+
+                <a href="/about/default.asp" target="_top">ABOUT</a>
+
+            </div>
+
+            <div style="padding-top:13px;color:#404040;clear:both;">
+
+                W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve
+                reading and basic understanding.<br/>
+
+                Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full
+                correctness of all content.<br/>
+
+                While using this site, you agree to have read and accepted our
+
+                <a href="/about/about_copyright.asp">terms of use</a> and
+
+                <a href="/about/about_privacy.asp">privacy policy</a>.<br/>
+
+                <a href="/about/about_copyright.asp">Copyright 1999-2012</a> by Refsnes Data. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
-
-
-
-<div style="width:300px;float:right;text-align:right;margin-top:20px;margin-right:14px;margin-bottom:5px;">
-
-<div id="google_translate_element" style="display:none"></div>
-
-<div id="translate_link" style="margin-bottom:14px">
-
-<a href="#" class="topnav"
-
-onclick="document.getElementById('google_translate_element').style.display='inline';document.getElementById('translate_link').style.display='none';return false;">
-
-TRANSLATE
-
-</a>
-
-</div>
-
-	<form style="font-size:11px;" method="get" name="searchform" action="http://www.google.com/search" target="_blank">
-
-    <input type="hidden" name="sitesearch" value="www.w3schools.com" />
-
-    <input onfocus="searchfield_focus(this)" style="width:150px;color:#808080;font-style:italic;margin:0;" 
-
-    type="text" name="as_q" size="20" value="Search w3schools.com" /><input type="submit" style="margin:0;" value="Search" title="Search" />
-
-	</form>
-
-</div>
-
-</div>
-
-<div id="topnav" style="clear:both;width:960px;height:25px;">
-
-<div style="float:left;width:400px;word-spacing:12px;font-size:90%;padding-left:15px;padding-top:6px;white-space:nowrap;text-align:left;">
-
-	<a class="topnav" href="/default.asp" target="_top">HOME </a>
-
-	<a class="topnav" href="/html/default.asp" target="_top">HTML </a>
-
-	<a class="topnav" href="/css/default.asp" target="_top">CSS </a>
-
-	<a class="topnav" href="/xml/default.asp" target="_top">XML </a>
-
-	<a class="topnav" href="/js/default.asp" target="_top">JAVASCRIPT </a>
-
-	<a class="topnav" href="/asp/default.asp" target="_top">ASP </a>
-
-	<a class="topnav" href="/php/default.asp" target="_top">PHP </a>
-
-	<a class="topnav" href="/sql/default.asp" target="_top">SQL </a>	
-
-	<a class="topnav" href="/sitemap/default.asp" target="_top">MORE...</a>
-
-</div>
-
-<div style="float:right;width:280px;word-spacing:6px;font-size:80%;padding-right:13px;padding-top:7px;color:#888888;white-space:nowrap;text-align:right;">
-
-	<a class="topnav" href="/sitemap/default.asp#references" target="_top">REFERENCES</a> |
-
-	<a class="topnav" href="/sitemap/default.asp#examples" target="_top">EXAMPLES</a> |
-
-	<a class="topnav" href="/forum/default.asp" target="_top">FORUM</a> |
-
-	<a class="topnav" href="/about/default.asp" target="_top">ABOUT</a>	
-
-</div>
-
-</div>
-
-
-
-<div style="width:960px;height:94px;position:relative;margin-left:auto;margin-right:auto;margin:0px;padding:0px;overflow:hidden">
-
-<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'>
-
-</script>
-
-<script type='text/javascript'>
-
-GS_googleAddAdSenseService("ca-pub-3440800076797949");
-
-GS_googleEnableAllServices();
-
-</script>
-
-<script type='text/javascript'>
-
-
-
-GA_googleAddSlot("ca-pub-3440800076797949", "MainLeaderboard");
-
-GA_googleAddSlot("ca-pub-3440800076797949", "SmallPS");
-
-GA_googleAddSlot("ca-pub-3440800076797949", "LargePS");
-
-GA_googleAddSlot("ca-pub-3440800076797949", "BottomRectangle");
-
-GA_googleAddSlot("ca-pub-3440800076797949", "SkyScraper");
-
-
-
-GA_googleAddSlot("ca-pub-3440800076797949", "TopRectangle");
-
-</script>
-
-<script type='text/javascript'>
-
-GA_googleFetchAds();
-
-</script>
-
-<!-- TopRectangle -->
-
-<script type='text/javascript'>
-
-GA_googleFillSlot("TopRectangle");
-
-</script>
-
-<div style="width:728px;height:90px;position:absolute;right:0px;top:0px;margin:0;padding:0;overflow:hidden;">
-
-
-
-<!-- MainLeaderboard -->
-
-<script type='text/javascript'>
-
-GA_googleFillSlot("MainLeaderboard");
-
-</script>
-
-
-
-</div></div>
-
-<div style="width:960px;padding:0px;margin:0px;">
-
-<div id="leftcolumn" style="width:170px;margin:0;padding:0;margin-top:5px;float:left;"><h2 class="left"><span class="left_h2">HTML5</span> Tutorial</h2>
-
-<a target="_top" href="default.asp" style='font-weight:bold;'>HTML5 Home</a><br />
-
-<a target="_top" href="html5_intro.asp" >HTML5 Introduction</a><br />
-
-<a target="_top" href="html5_new_elements.asp" >HTML5 New Elements</a><br />
-
-<a target="_top" href="html5_video.asp" >HTML5 Video</a><br />
-
-<a target="_top" href="html5_video_dom.asp" >HTML5 Video/DOM</a><br />
-
-<a target="_top" href="html5_audio.asp" >HTML5 Audio</a><br />
-
-<a target="_top" href="html5_draganddrop.asp" >HTML5 Drag and Drop</a><br />
-
-<a target="_top" href="html5_canvas.asp" >HTML5 Canvas</a><br />
-
-<a target="_top" href="html5_svg.asp" >HTML5 SVG</a><br />
-
-<a target="_top" href="html5_canvas_vs_svg.asp" >HTML5 Canvas vs. SVG</a><br />
-
-<a target="_top" href="html5_geolocation.asp" >HTML5 Geolocation</a><br />
-
-<a target="_top" href="html5_webstorage.asp" >HTML5 Web Storage</a><br />
-
-<a target="_top" href="html5_app_cache.asp" >HTML5 App Cache</a><br />
-
-<a target="_top" href="html5_webworkers.asp" >HTML5 Web Workers</a><br />
-
-<a target="_top" href="html5_serversentevents.asp" >HTML5 SSE</a><br />
-
-<br />
-
-<h2 class="left"><span class="left_h2">HTML5</span> Forms</h2>
-
-<a target="_top" href="html5_form_input_types.asp" >HTML5 Input Types</a><br />
-
-<a target="_top" href="html5_form_elements.asp" >HTML5 Form Elements</a><br />
-
-<a target="_top" href="html5_form_attributes.asp" >HTML5 Form Attributes</a><br />
-
-<br />
-
-<h2 class="left"><span class="left_h2">HTML5</span> Reference</h2>
-
-<a target="_top" href="html5_reference.asp" >HTML5 Tags</a><br />
-
-<a target="_top" href="html5_ref_globalattributes.asp" >HTML5 Attributes</a><br />
-
-<a target="_top" href="html5_ref_eventattributes.asp" >HTML5 Events</a><br />
-
-<a target="_top" href="html5_ref_av_dom.asp" >HTML5 Audio/Video</a><br />
-
-<a target="_top" href="html5_ref_canvas.asp" >HTML5 Canvas 2d</a><br />
-
-<a target="_top" href="html5_ref_dtd.asp" >HTML Valid DTDs</a><br />
-
-<br />
-
-<h2 class="left"><span class="left_h2">HTML5</span> Tags</h2>
-
-<a target="_top" href="tag_comment.asp" >&lt;!--&gt;</a><br />
-
-<a target="_top" href="tag_doctype.asp" >&lt;!DOCTYPE&gt;</a><br />
-
-<a target="_top" href="tag_a.asp" >&lt;a&gt;</a><br />
-
-<a target="_top" href="tag_abbr.asp" >&lt;abbr&gt;</a><br />
-
-<a target="_top" href="tag_acronym.asp" >&lt;acronym&gt;</a><br />
-
-<a target="_top" href="tag_address.asp" >&lt;address&gt;</a><br />
-
-<a target="_top" href="tag_applet.asp" >&lt;applet&gt;</a><br />
-
-<a target="_top" href="tag_area.asp" >&lt;area&gt;</a><br />
-
-<a target="_top" href="tag_article.asp" >&lt;article&gt;</a><br />
-
-<a target="_top" href="tag_aside.asp" >&lt;aside&gt;</a><br />
-
-<a target="_top" href="tag_audio.asp" >&lt;audio&gt;</a><br />
-
-<a target="_top" href="tag_b.asp" >&lt;b&gt;</a><br />
-
-<a target="_top" href="tag_base.asp" >&lt;base&gt;</a><br />
-
-<a target="_top" href="tag_basefont.asp" >&lt;basefont&gt;</a><br />
-
-<a target="_top" href="tag_bdi.asp" >&lt;bdi&gt;</a><br />
-
-<a target="_top" href="tag_bdo.asp" >&lt;bdo&gt;</a><br />
-
-<a target="_top" href="tag_big.asp" >&lt;big&gt;</a><br />
-
-<a target="_top" href="tag_blockquote.asp" >&lt;blockquote&gt;</a><br />
-
-<a target="_top" href="tag_body.asp" >&lt;body&gt;</a><br />
-
-<a target="_top" href="tag_br.asp" >&lt;br&gt;</a><br />
-
-<a target="_top" href="tag_button.asp" >&lt;button&gt;</a><br />
-
-<a target="_top" href="tag_canvas.asp" >&lt;canvas&gt;</a><br />
-
-<a target="_top" href="tag_caption.asp" >&lt;caption&gt;</a><br />
-
-<a target="_top" href="tag_center.asp" >&lt;center&gt;</a><br />
-
-<a target="_top" href="tag_cite.asp" >&lt;cite&gt;</a><br />
-
-<a target="_top" href="tag_phrase_elements.asp" >&lt;code&gt;</a><br />
-
-<a target="_top" href="tag_col.asp" >&lt;col&gt;</a><br />
-
-<a target="_top" href="tag_colgroup.asp" >&lt;colgroup&gt;</a><br />
-
-<a target="_top" href="tag_command.asp" >&lt;command&gt;</a><br />
-
-<a target="_top" href="tag_datalist.asp" >&lt;datalist&gt;</a><br />
-
-<a target="_top" href="tag_dd.asp" >&lt;dd&gt;</a><br />
-
-<a target="_top" href="tag_del.asp" >&lt;del&gt;</a><br />
-
-<a target="_top" href="tag_details.asp" >&lt;details&gt;</a><br />
-
-<a target="_top" href="tag_phrase_elements.asp" >&lt;dfn&gt;</a><br />
-
-<a target="_top" href="tag_dir.asp" >&lt;dir&gt;</a><br />
-
-<a target="_top" href="tag_div.asp" >&lt;div&gt;</a><br />
-
-<a target="_top" href="tag_dl.asp" >&lt;dl&gt;</a><br />
-
-<a target="_top" href="tag_dt.asp" >&lt;dt&gt;</a><br />
-
-<a target="_top" href="tag_phrase_elements.asp" >&lt;em&gt;</a><br />
-
-<a target="_top" href="tag_embed.asp" >&lt;embed&gt;</a><br />
-
-<a target="_top" href="tag_fieldset.asp" >&lt;fieldset&gt;</a><br />
-
-<a target="_top" href="tag_figcaption.asp" >&lt;figcaption&gt;</a><br />
-
-<a target="_top" href="tag_figure.asp" >&lt;figure&gt;</a><br />
-
-<a target="_top" href="tag_font.asp" >&lt;font&gt;</a><br />
-
-<a target="_top" href="tag_footer.asp" >&lt;footer&gt;</a><br />
-
-<a target="_top" href="tag_form.asp" >&lt;form&gt;</a><br />
-
-<a target="_top" href="tag_frame.asp" >&lt;frame&gt;</a><br />
-
-<a target="_top" href="tag_frameset.asp" >&lt;frameset&gt;</a><br />
-
-<a target="_top" href="tag_hn.asp" >&lt;h1&gt; - &lt;h6&gt;</a><br />
-
-<a target="_top" href="tag_head.asp" >&lt;head&gt;</a><br />
-
-<a target="_top" href="tag_header.asp" >&lt;header&gt;</a><br />
-
-<a target="_top" href="tag_hgroup.asp" >&lt;hgroup&gt;</a><br />
-
-<a target="_top" href="tag_hr.asp" >&lt;hr&gt;</a><br />
-
-<a target="_top" href="tag_html.asp" >&lt;html&gt;</a><br />
-
-<a target="_top" href="tag_i.asp" >&lt;i&gt;</a><br />
-
-<a target="_top" href="tag_iframe.asp" >&lt;iframe&gt;</a><br />
-
-<a target="_top" href="tag_img.asp" >&lt;img&gt;</a><br />
-
-<a target="_top" href="tag_input.asp" >&lt;input&gt;</a><br />
-
-<a target="_top" href="tag_ins.asp" >&lt;ins&gt;</a><br />
-
-<a target="_top" href="tag_keygen.asp" >&lt;keygen&gt;</a><br />
-
-<a target="_top" href="tag_phrase_elements.asp" >&lt;kbd&gt;</a><br />
-
-<a target="_top" href="tag_label.asp" >&lt;label&gt;</a><br />
-
-<a target="_top" href="tag_legend.asp" >&lt;legend&gt;</a><br />
-
-<a target="_top" href="tag_li.asp" >&lt;li&gt;</a><br />
-
-<a target="_top" href="tag_link.asp" >&lt;link&gt;</a><br />
-
-<a target="_top" href="tag_map.asp" >&lt;map&gt;</a><br />
-
-<a target="_top" href="tag_mark.asp" >&lt;mark&gt;</a><br />
-
-<a target="_top" href="tag_menu.asp" >&lt;menu&gt;</a><br />
-
-<a target="_top" href="tag_meta.asp" >&lt;meta&gt;</a><br />
-
-<a target="_top" href="tag_meter.asp" >&lt;meter&gt;</a><br />
-
-<a target="_top" href="tag_nav.asp" >&lt;nav&gt;</a><br />
-
-<a target="_top" href="tag_noframes.asp" >&lt;noframes&gt;</a><br />
-
-<a target="_top" href="tag_noscript.asp" >&lt;noscript&gt;</a><br />
-
-<a target="_top" href="tag_object.asp" >&lt;object&gt;</a><br />
-
-<a target="_top" href="tag_ol.asp" >&lt;ol&gt;</a><br />
-
-<a target="_top" href="tag_optgroup.asp" >&lt;optgroup&gt;</a><br />
-
-<a target="_top" href="tag_option.asp" >&lt;option&gt;</a><br />
-
-<a target="_top" href="tag_output.asp" >&lt;output&gt;</a><br />
-
-<a target="_top" href="tag_p.asp" >&lt;p&gt;</a><br />
-
-<a target="_top" href="tag_param.asp" >&lt;param&gt;</a><br />
-
-<a target="_top" href="tag_pre.asp" >&lt;pre&gt;</a><br />
-
-<a target="_top" href="tag_progress.asp" >&lt;progress&gt;</a><br />
-
-<a target="_top" href="tag_q.asp" >&lt;q&gt;</a><br />
-
-<a target="_top" href="tag_rp.asp" >&lt;rp&gt;</a><br />
-
-<a target="_top" href="tag_rt.asp" >&lt;rt&gt;</a><br />
-
-<a target="_top" href="tag_ruby.asp" >&lt;ruby&gt;</a><br />
-
-<a target="_top" href="tag_s.asp" >&lt;s&gt;</a><br />
-
-<a target="_top" href="tag_phrase_elements.asp" >&lt;samp&gt;</a><br />
-
-<a target="_top" href="tag_script.asp" >&lt;script&gt;</a><br />
-
-<a target="_top" href="tag_section.asp" >&lt;section&gt;</a><br />
-
-<a target="_top" href="tag_select.asp" >&lt;select&gt;</a><br />
-
-<a target="_top" href="tag_small.asp" >&lt;small&gt;</a><br />
-
-<a target="_top" href="tag_source.asp" >&lt;source&gt;</a><br />
-
-<a target="_top" href="tag_span.asp" >&lt;span&gt;</a><br />
-
-<a target="_top" href="tag_strike.asp" >&lt;strike&gt;</a><br />
-
-<a target="_top" href="tag_phrase_elements.asp" >&lt;strong&gt;</a><br />
-
-<a target="_top" href="tag_style.asp" >&lt;style&gt;</a><br />
-
-<a target="_top" href="tag_sup.asp" >&lt;sub&gt;</a><br />
-
-<a target="_top" href="tag_summary.asp" >&lt;summary&gt;</a><br />
-
-<a target="_top" href="tag_sup.asp" >&lt;sup&gt;</a><br />
-
-<a target="_top" href="tag_table.asp" >&lt;table&gt;</a><br />
-
-<a target="_top" href="tag_tbody.asp" >&lt;tbody&gt;</a><br />
-
-<a target="_top" href="tag_td.asp" >&lt;td&gt;</a><br />
-
-<a target="_top" href="tag_textarea.asp" >&lt;textarea&gt;</a><br />
-
-<a target="_top" href="tag_tfoot.asp" >&lt;tfoot&gt;</a><br />
-
-<a target="_top" href="tag_th.asp" >&lt;th&gt;</a><br />
-
-<a target="_top" href="tag_thead.asp" >&lt;thead&gt;</a><br />
-
-<a target="_top" href="tag_time.asp" >&lt;time&gt;</a><br />
-
-<a target="_top" href="tag_title.asp" >&lt;title&gt;</a><br />
-
-<a target="_top" href="tag_tr.asp" >&lt;tr&gt;</a><br />
-
-<a target="_top" href="tag_track.asp" >&lt;track&gt;</a><br />
-
-<a target="_top" href="tag_tt.asp" >&lt;tt&gt;</a><br />
-
-<a target="_top" href="tag_u.asp" >&lt;u&gt;</a><br />
-
-<a target="_top" href="tag_ul.asp" >&lt;ul&gt;</a><br />
-
-<a target="_top" href="tag_phrase_elements.asp" >&lt;var&gt;</a><br />
-
-<a target="_top" href="tag_video.asp" >&lt;video&gt;</a><br />
-
-<a target="_top" href="tag_wbr.asp" >&lt;wbr&gt;</a><br />
-
-<br /></div>
-
-<div style="width:634px;margin:0px;padding:0px;background-color:#ffffff;color:#000000;padding-bottom:8px;padding-right:5px;padding-top:4px;float:left;">
-
-
-
-<h1>HTML5 <span class="color_h1">Tutorial</span></h1>
-
-<div class="chapter">
-
-<div class="prev"><a class="chapter" href="/default.asp">&laquo; W3Schools Home</a></div>
-
-<div class="next"><a class="chapter" href="html5_intro.asp">Next Chapter &raquo;</a></div>
-
-</div>
-
-<br />
-
-<div class="html5header">
-
-<div id="html5headline">HTML5 is The New HTML Standard</div>
-
-<div id="header_image">
-
-
-
-
-
-<div id="header_image_html5" style="background:url('img_html5_html5.gif');"></div>
-
-<div id="header_image_multimedia" style="display:none;margin:0;padding:0;padding-top:20px;height:215px;text-align:center">
-
-<video width="270" controls="controls" id="html5_vid">
-
-  <source src="mov_bbb.mp4" type="video/mp4" />
-
-  <source src="mov_bbb.ogg" type="video/ogg" />
-
-  <source src="mov_bbb.webm" type="video/webm" />
-
-Your browser does not support the video tag.
-
-</video>
-
-<p style="text-align:center;margin:0;padding:0">Video courtesy of <a href="http://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a></p>
-
-</div>
-
-<div id="header_image_3d" style="display:none;background:url('img_html5_3d.jpg')"></div>
-
-<div id="header_image_offline" style="display:none;background:url('img_html5_offline.jpg')"></div>
-
-<div id="header_image_form" style="display:none;background:url('img_html5_form.jpg')"></div>
-
-<div id="header_image_css3" style="display:none;background:url('img_html5_css3.jpg')"></div>
-
-</div>
-
-<div id="header_text">
-
-<div id="header_text_html5">
-
-<h2>HTML5</h2>
-
-<ul>
-
-<li>New Elements</li>
-
-<li>New Attributes</li>
-
-<li>Full CSS3 Support</li>
-
-<li>Video and Audio</li>
-
-<li>2D/3D Graphics</li>
-
-<li>Local Storage</li>
-
-<li>Local SQL Database</li>
-
-<li>Web Applications</li>
-
-</ul>
-
-</div>
-
-
-
-<div id="header_text_multimedia" style="display:none;">
-
-<h2>HTML5 Multimedia</h2>
-
-<p>With HTML5, playing video and audio is easier than ever.</p>
-
-<ul>
-
-<li>HTML5 <a href="html5_video.asp">&lt;video&gt;</a></li>
-
-<li>HTML5 <a href="html5_audio.asp">&lt;audio&gt;</a></li>
-
-</ul>
-
-</div>
-
-
-
-<div id="header_text_offline" style="display:none">
-
-<h2>HTML5 Applications</h2>
-
-<p>With HTML5, web application development is easier than ever.</p>
-
-<ul>
-
-<li>Local data storage</li>
-
-<li>Local file access</li>
-
-<li>Local SQL database</li>
-
-<li>Application cache</li>
-
-<li>Javascript workers</li>
-
-<li>XHTMLHttpRequest 2</li>
-
-</ul>
-
-</div>
-
-
-
-<div id="header_text_3d" style="display:none">
-
-<h2>HTML5 Graphics</h2>
-
-<p>With HTML5, drawing graphics is easier than ever:</p>
-
-<ul>
-
-<li>Using the <a href="html5_canvas.asp">&lt;canvas&gt;</a> element</li>
-
-<li>Using inline <a href="/svg/default.asp">SVG</a></li>
-
-<li>Using <a href="/css3/default.asp">CSS3 2D/3D</a></li>
-
-</ul>
-
-</div>
-
-
-
-<div id="header_text_css3" style="display:none">
-
-<h2>HTML5 uses CSS3</h2>
-
-<ul>
-
-<li>New Selectors</li>
-
-<li>New Properties</li>
-
-<li>Animations</li>
-
-<li>2D/3D Transformations</li>
-
-<li>Rounded Corners</li>
-
-<li>Shadow Effects</li>
-
-<li>Downloadable Fonts</li>
-
-</ul>
-
-<p>Read more in our <a href="/css3/default.asp">CSS3 tutorial.</a></p>
-
-</div>
-
-<div id="header_text_form" style="display:none">
-
-<h2>Semantic Elements</h2>
-
-<p>New elements for headers, footers, menues, sections and articles.</p>
-
-<h2>HTML5 Forms</h2>
-
-<p>New form elements, new attributes, new input types, automatic validation.</p>
-
-</div>
-
-</div>
-
-<div id="header_icons">
-
-<ul id="header_icons_list">
-
-<li id="header_html5" onclick="changeHeader('html5','0');selIcon='html5'" onmouseover="iconHover('html5','0')" onmouseout="iconHoverOut('html5','0')" title="HTML5"></li>
-
-<li id="header_multimedia" onclick="changeHeader('multimedia','-104');selIcon='multimedia';playVideo()" onmouseover="iconHover('multimedia','-104')" onmouseout="iconHoverOut('multimedia','-104')" title="HTML5 Multimedia"></li>
-
-<li id="header_3d" onclick="changeHeader('3d','-208');selIcon='3d'" onmouseover="iconHover('3d','-208')" onmouseout="iconHoverOut('3d','-208')" title="HTML5 Graphics"></li>
-
-<li id="header_offline" onclick="changeHeader('offline','-312');selIcon='offline'" onmouseover="iconHover('offline','-312')" onmouseout="iconHoverOut('offline','-312')" title="HTML5 Local Storage"></li>
-
-<li style="width:105px;" id="header_form" onclick="changeHeader('form','-418');selIcon='form'" onmouseover="iconHover('form','-418')" onmouseout="iconHoverOut('form','-418')" title="HTML5 Semantics and Forms"></li>
-
-<li id="header_css3" onclick="changeHeader('css3','-521');selIcon='css3'" onmouseover="iconHover('css3','-521')" onmouseout="iconHoverOut('css3','-521')" title="HTML5 CSS3"></li>
-
-</ul>
-
-</div>
-
-</div>
-
-<br />
-
-<h2 class="tutheader">Examples in Each Chapter</h2>
-
-<p>With our HTML editor, you can edit the HTML, and click on a button to view the result.</p>
-
-<div class="example">
-
-<h2 class="example">Example</h2>
-
-<div class="example_code notranslate">
-
-	&lt;!DOCTYPE HTML&gt;<br />
-
-	&lt;html&gt;<br />
-
-	&lt;body&gt;<br />
-
-	<br />
-
-	&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;<br />
-
-&nbsp; &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot; /&gt;<br />
-
-&nbsp; &lt;source src=&quot;movie.ogg&quot; type=&quot;video/ogg&quot; /&gt;<br />
-
-&nbsp; &lt;source src=&quot;movie.webm&quot; type=&quot;video/webm&quot; /&gt;<br />
-
-	Your browser does not support the video tag.<br />
-
-	&lt;/video&gt;<br />
-
-	<br />
-
-	&lt;/body&gt;<br />
-
-	&lt;/html&gt;
-
-</div>
-
-<br />
-
-	<a class="tryitbtn" target="_blank" href="tryit.asp?filename=tryhtml5_video_bear">Try it yourself &raquo;</a></div>
-
-<p><b>Click on the &quot;Try it yourself&quot; button to see how it works</b></p>
-
-<p><b><a href="html5_intro.asp">Start learning HTML5 now!</a></b></p>
-
-
-
-<h2 class="tutheader">HTML5 References</h2>
-
-<p>At W3Schools you will find complete references about tags, global attributes,
-
-standard events, and more.</p>
-
-<p>
-
-<a href="html5_reference.asp">HTML5 Tag Reference</a>
-
-</p>
-
-
-
-<br />
-
-<div class="chapter">
-
-<div class="prev"><a class="chapter" href="/default.asp">&laquo; W3Schools Home</a></div>
-
-<div class="next"><a class="chapter" href="html5_intro.asp">Next Chapter &raquo;</a></div>
-
-</div>
-
-
-
-<!-- **** SPOTLIGHTS 1 **** -->
-
-<!-- SmallPS -->
-
-<script type='text/javascript'>
-
-GA_googleFillSlot("SmallPS");
-
-</script>
-
-<!-- **** SPOTLIGHTS 2 **** -->
-
-<!-- LargePS -->
-
-<script type='text/javascript'>
-
-GA_googleFillSlot("LargePS");
-
-</script>
-
-<!-- **** SPOTLIGHTS 3 **** -->
-
-<!-- BottomRectangle -->
-
-<div style="width:340px;margin:auto">
-
-<script type='text/javascript'>
-
-GA_googleFillSlot("BottomRectangle");
-
-</script>
-
-</div>
-
-
-
-<!-- BottomBanner -->
-
-<script type='text/javascript'>
-
-GA_googleFillSlot("BottomBanner");
-
-</script>
-
-
-
-<div id="err_form" style="display:none">
-
-<h2>Your suggestion:</h2>
-
-<p><label for="err_email">Your E-mail (optional):</label> <input type="text" id="err_email" name="err_email" /></p>
-
-<p><label for="err_url">Page address:</label> <input type="text" disabled="disabled" id="err_url" name="err_url" /></p>
-
-<p><label for="err_desc">Description:</label> <textarea name="err_desc" id="err_desc" cols="92" rows="20"></textarea></p>
-
-<p class="submit"><input type="button" value="Submit" onclick="sendErr()" /></p>
-
-<div class="err_close" onclick="hideError()">Close [X]</div>
-
-</div>
-
-<div id="err_sent" style="display:none">
-
-<h2>Thank you for your support.</h2>
-
-<div class="err_close" onclick="hideSent()">Close [X]</div>
-
-</div>
-
-</div>
-
-
-
-<div id="rightcolumn" style="width:150px;margin:0px;padding:0px;float:left">
-
-<table>
-
-<tr><th>WEB HOSTING</th></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.lunarpages.com/id/w3schools/goto/w3schools">Best Web Hosting</a>
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.eukhost.com">PHP MySQL Hosting</a>
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.web-hosting-top.com/coupons">Best Hosting Coupons</a>
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.heartinternet.co.uk/index.shtml">UK Reseller Hosting</a>
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.webhosting.uk.com/cloud-hosting.php">Cloud Hosting</a>
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.justhost.com/track/w3schools/textlink">Top Web Hosting</a>
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.doteasy.com/index.cfm?A=w3text">$3.98 Unlimited Hosting</a>
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.website.com/">Premium Website Design</a>
-
-</td></tr>
-
-</table>
-
-<table>
-
-<tr><th>WEB BUILDING</th></tr>
-
-<tr><td>
-
-
-
-<a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_text&amp;q=xmlspy">Download XML Editor</a>
-
-
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.wix.com/html5/now-on-wix?utm_campaign=ma_w3schools.com&amp;experiment_id=ma_html_w3schools.comlink1">FREE Website BUILDER</a>
-
-</td></tr>
-
-<tr><td>
-
-<a target="_blank" rel="nofollow" href="http://www.dreamtemplate.com/?ref=w3txtfree">Free Website Templates</a>
-
-<a target="_blank" rel="nofollow" href="http://www.dreamtemplate.com/?ref=w3txtfree">Free CSS Templates</a>
-
-</td></tr>
-
-<tr><td>
-
-<a href="http://www.wix.com/html5/now-on-wix?utm_campaign=ma_w3schools.com&amp;experiment_id=ma_html_w3schools.comlink2" rel="nofollow" target="_blank">CREATE HTML Websites</a>
-
-</td></tr>
-
-</table>
-
-<table>
-
-<tr><th>W3SCHOOLS EXAMS</th></tr>
-
-<tr><td>
-
-<a target="_blank" href="/cert/default.asp">Get Certified in:<br />HTML, CSS, JavaScript, XML, PHP, and ASP</a>
-
-</td></tr>
-
-</table>
-
-<table>
-
-<tr><th>W3SCHOOLS BOOKS</th></tr>
-
-<tr><td>
-
-<a target="_blank" href="/books/default.asp">
-
-New Books:<br />HTML, CSS<br />
-
-JavaScript, and Ajax</a>
-
-</td></tr>
-
-</table>
-
-<table>
-
-<tr><th>STATISTICS</th></tr>
-
-<tr><td>
-
-<a target="_top" href="/browsers/browsers_stats.asp">Browser Statistics</a><br />
-
-<a target="_top" href="/browsers/browsers_os.asp">Browser OS</a><br />
-
-<a target="_top" href="/browsers/browsers_display.asp">Browser Display</a>
-
-</td></tr></table>
 
 <script type="text/javascript">
 
-<!--
+    function googleTranslateElementInit() {
 
-function sharethis()
+        new google.translate.TranslateElement({
 
-{
+            pageLanguage: 'en',
 
-txt='<a href="http://www.facebook.com/sharer.php?u='+document.URL+'" target="_blank" title="Facebook">'
+            autoDisplay: false,
 
-txt=txt+'<img src="/images/share_facebook.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+            gaTrack: true,
 
-txt=txt+'<a href="http://twitter.com/home?status=Currently reading '+document.URL+'" target="_blank" title="Twitter">';
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
 
-txt=txt+'<img src="/images/share_twitter.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+        }, 'google_translate_element');
 
-txt=txt+'<a href="mailto:?&amp;subject='+document.title+'&amp;body=Take%20a%20look%20at%20this%20page%20at%20W3Schools.com:%20'+document.URL+'" target="_blank" title="E-mail">';
-
-txt=txt+'<img src="/images/share_email.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
-
-txt=txt+'<a href="http://delicious.com/save?v=5&noui&jump=close&url='+document.URL+'&title='+document.title+'" target="_blank" title="Delicious">';
-
-txt=txt+'<img src="/images/share_delicious.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
-
-txt=txt+'<a href="http://www.reddit.com/submit?url='+document.URL+'" target="_blank" title="Reddit">';
-
-txt=txt+'<img src="/images/share_reddit.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
-
-txt=txt+'<a href="http://digg.com/submit?url='+document.URL+'&amp;title='+document.title+'" target="_blank" title="Digg">';
-
-txt=txt+'<img src="/images/share_digg.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
-
-txt=txt+'<a href="http://www.stumbleupon.com/submit?url='+document.URL+'%26title%3D'+document.title+'" target="_blank" title="Stumbleupon">';
-
-txt=txt+'<img src="/images/share_stumbleupon.gif" width="16px" height="16px" /></a>';
-
-document.getElementById("sharethis").innerHTML=txt;
-
-}
-
-//--></script>
-
-<table>
-
-<tr><th>SHARE THIS PAGE</th></tr>
-
-<tr>
-
-<td id="sharethis">
-
-<div style="height:16px">
-
-<a href="#" onclick="sharethis();return false;">Share with &raquo;</a>
-
-</div>
-
-</td>
-
-</tr>
-
-</table>
-
-<table>
-
-<tr><td><br />
-
-<div style="width:124px;margin:auto">
-
-<!-- SkyScraper -->
-
-<script type='text/javascript'>
-
-GA_googleFillSlot("SkyScraper");
+    }
 
 </script>
-
-</div>
-
-</td>
-
-</tr>
-
-</table>
-
-
-
-</div>
-
-</div>
-
-<br />
-
-</div>
-
-<div style="width:100%;clear:both;margin:0;padding:0;background-color:transparent;background-image:url('/images/gradientbottom.jpg');background-repeat:repeat-x;position:relative;">
-
-<div id="footer" style="width:960px;margin-left:auto;margin-right:auto;height:110px;">
-
-<div style="float:left;width:200px;text-align:left;padding-left:3px;padding-top:11px;"><a href="http://www.w3schools.com">
-
-<img style="border:0" src="/images/w3schoolscom_gray.gif" alt="W3Schools.com" /></a>
-
-</div>
-
-<div style="word-spacing:6px;font-size:80%;padding-right:12px;padding-top:19px;float:right;width:600px;text-align:right;">
-
-<a href="" onclick="displayError();return false">REPORT ERROR</a> |
-
-<a href="/default.asp" target="_top">HOME</a> |
-
-<a href="#top" target="_top">TOP</a> |
-
-<a href='/html5/default.asp?output=print' target="_blank">PRINT</a> |
-
-<a href="/forum/default.asp" target="_blank">FORUM</a> |
-
-<a href="/about/default.asp" target="_top">ABOUT</a>
-
-</div>
-
-<div style="padding-top:13px;color:#404040;clear:both;">
-
-W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding.<br />
-
-Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.<br />
-
-While using this site, you agree to have read and accepted our
-
-<a href="/about/about_copyright.asp">terms of use</a> and
-
-<a href="/about/about_privacy.asp">privacy policy</a>.<br />
-
-<a href="/about/about_copyright.asp">Copyright 1999-2012</a> by Refsnes Data. All Rights Reserved.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<script type="text/javascript">
-
-function googleTranslateElementInit() {
-
-  new google.translate.TranslateElement({
-
-    pageLanguage: 'en',
-
-    autoDisplay: false,    
-
-    gaTrack: true,
-
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-
-  }, 'google_translate_element');
-
-}
-
-</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
-
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        type="text/javascript"></script>
 
 
 </body>
