@@ -1,7 +1,6 @@
 package goproxy
 
 import (
-	"crypto/rand"
 	"crypto/rsa"
 	"crypto/sha1"
 	"crypto/tls"
@@ -44,13 +43,12 @@ func signHost(ca tls.Certificate, hosts []string) (cert *tls.Certificate, err er
 	if err != nil {
 		panic(err)
 	}
+
 	hash := make([]byte, 20)
+	Read(hash)
 	serial := new(big.Int)
 	serial.SetBytes(hash)
-	_, err = rand.Read(hash)
-	if err != nil {
-		panic(err)
-	}
+
 	template := x509.Certificate{
 		// TODO(elazar): instead of this ugly hack, just encode the certificate and hash the binary form.
 		SerialNumber: serial,
