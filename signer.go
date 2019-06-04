@@ -1,14 +1,18 @@
 package goproxy
 
 import (
+	"crypto"
+	"crypto/ecdsa"
+	"crypto/elliptic"
 	"crypto/rsa"
 	"crypto/sha1"
 	"crypto/tls"
 	"crypto/x509"
 	"crypto/x509/pkix"
+	"fmt"
+	"log"
 	"math/big"
 	"net"
-	"runtime"
 	"sort"
 	"time"
 )
@@ -37,6 +41,7 @@ func signHost(ca tls.Certificate, hosts []string) (cert *tls.Certificate, err er
 
 	// Use the provided ca and not the global GoproxyCa for certificate generation.
 	if x509ca, err = x509.ParseCertificate(ca.Certificate[0]); err != nil {
+		log.Print("SignHost failed, selecting provided ca: ", err.Error())
 		return
 	}
 	start := time.Unix(0, 0)
@@ -44,9 +49,12 @@ func signHost(ca tls.Certificate, hosts []string) (cert *tls.Certificate, err er
 	if err != nil {
 		panic(err)
 	}
-	hash := hashSorted(append(hosts, goproxySignerVersion, ":"+runtime.Version()))
+
+	hash := make([]byte, 20)
+	Read(hash)
 	serial := new(big.Int)
 	serial.SetBytes(hash)
+
 	template := x509.Certificate{
 		// TODO(elazar): instead of this ugly hack, just encode the certificate and hash the binary form.
 		SerialNumber: serial,
@@ -71,14 +79,29 @@ func signHost(ca tls.Certificate, hosts []string) (cert *tls.Certificate, err er
 	}
 	var csprng CounterEncryptorRand
 	if csprng, err = NewCounterEncryptorRandFromKey(ca.PrivateKey, hash); err != nil {
+		log.Print("SignHost failed, NewCounterEncryptorRandFromKey: ", err.Error())
 		return
 	}
-	var certpriv *rsa.PrivateKey
-	if certpriv, err = rsa.GenerateKey(&csprng, 2048); err != nil {
-		return
+
+	var certpriv crypto.Signer
+	switch ca.PrivateKey.(type) {
+	case *rsa.PrivateKey:
+		if certpriv, err = rsa.GenerateKey(&csprng, 2048); err != nil {
+			log.Print("SignHost failed, rsa.GenerateKey: ", err.Error())
+			return
+		}
+	case *ecdsa.PrivateKey:
+		if certpriv, err = ecdsa.GenerateKey(elliptic.P256(), &csprng); err != nil {
+			log.Print("SignHost failed, ecdsa.GenerateKey: ", err.Error())
+			return
+		}
+	default:
+		err = fmt.Errorf("unsupported key type %T", ca.PrivateKey)
 	}
+
 	var derBytes []byte
-	if derBytes, err = x509.CreateCertificate(&csprng, &template, x509ca, &certpriv.PublicKey, ca.PrivateKey); err != nil {
+	if derBytes, err = x509.CreateCertificate(&csprng, &template, x509ca, certpriv.Public(), ca.PrivateKey); err != nil {
+		log.Print("SignHost failed, x509.CreateCertificate: ", err.Error())
 		return
 	}
 	return &tls.Certificate{
