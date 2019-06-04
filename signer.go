@@ -10,6 +10,7 @@ import (
 	"crypto/x509"
 	"crypto/x509/pkix"
 	"fmt"
+	"log"
 	"math/big"
 	"net"
 	"sort"
@@ -40,6 +41,7 @@ func signHost(ca tls.Certificate, hosts []string) (cert *tls.Certificate, err er
 
 	// Use the provided ca and not the global GoproxyCa for certificate generation.
 	if x509ca, err = x509.ParseCertificate(ca.Certificate[0]); err != nil {
+		log.Print("SignHost failed, selecting provided ca: ", err.Error())
 		return
 	}
 	start := time.Unix(0, 0)
@@ -77,6 +79,7 @@ func signHost(ca tls.Certificate, hosts []string) (cert *tls.Certificate, err er
 	}
 	var csprng CounterEncryptorRand
 	if csprng, err = NewCounterEncryptorRandFromKey(ca.PrivateKey, hash); err != nil {
+		log.Print("SignHost failed, NewCounterEncryptorRandFromKey: ", err.Error())
 		return
 	}
 
@@ -84,10 +87,12 @@ func signHost(ca tls.Certificate, hosts []string) (cert *tls.Certificate, err er
 	switch ca.PrivateKey.(type) {
 	case *rsa.PrivateKey:
 		if certpriv, err = rsa.GenerateKey(&csprng, 2048); err != nil {
+			log.Print("SignHost failed, rsa.GenerateKey: ", err.Error())
 			return
 		}
 	case *ecdsa.PrivateKey:
 		if certpriv, err = ecdsa.GenerateKey(elliptic.P256(), &csprng); err != nil {
+			log.Print("SignHost failed, ecdsa.GenerateKey: ", err.Error())
 			return
 		}
 	default:
@@ -96,6 +101,7 @@ func signHost(ca tls.Certificate, hosts []string) (cert *tls.Certificate, err er
 
 	var derBytes []byte
 	if derBytes, err = x509.CreateCertificate(&csprng, &template, x509ca, certpriv.Public(), ca.PrivateKey); err != nil {
+		log.Print("SignHost failed, x509.CreateCertificate: ", err.Error())
 		return
 	}
 	return &tls.Certificate{
